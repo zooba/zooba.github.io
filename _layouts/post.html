@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<div class="postdate">
+<strong>Posted:</strong> {{ page.date | date_to_long_string: "ordinal" }}<br/>
+<strong>Category:</strong> {{ page.categories }}<br/>
+{% if page.tags.first %}<strong>Tags:</strong> {{ page.tags }}{% endif %}
+</div>
+
+{{ content }}

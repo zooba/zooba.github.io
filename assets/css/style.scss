@@ -1,0 +1,63 @@
+---
+---
+
+@import "jekyll-theme-slate";
+
+footer {
+  font-size: 10px;
+  float: right;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+img.alignright {
+  float: right;
+  max-width: 200px
+}
+
+pre, code {
+  font-family: "Fantasque Sans Mono", "Consolas", Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-size: 14px;
+}
+
+div.postdate {
+  padding: 8px;
+  color: #fff;
+  background-color: #222;
+
+  font-size: 12px;
+
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+
+  float: right;
+}
+
+div.postdate strong {
+  font-weight: 700;
+}
