@@ -25,4 +25,4 @@ collections:
     is_root: false
   pages:
     output: true
-    permalink: /:slug
+    permalink: /:path
