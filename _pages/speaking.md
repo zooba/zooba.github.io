@@ -6,6 +6,8 @@ redirect_from:
   - /blog/speaking
 ---
 
+<!--more-->
+
 # 2019
 ## December
 
@@ -90,7 +92,7 @@ redirect_from:
 
 "[Why is Windows so Broken (and how to fix it)](https://www.youtube.com/watch?v=xoACUQrCw8A)", PyData SF 2016, San Francisco
 
-"[Episode #70 Python on Windows](https://www.podcastinit.com/episode-70-python-on-windows-with-steve-dower/)", podcast, {%raw%}Podcast.__init__{%endraw%}
+"[Episode #70 Python on Windows](https://www.podcastinit.com/episode-70-python-on-windows-with-steve-dower/)", podcast, Podcast.\_\_init\_\_
 
 ## June
 
