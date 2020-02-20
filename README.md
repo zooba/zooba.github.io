@@ -4,7 +4,7 @@ permalink: /
 is_root: true
 ---
 
-[Latest Blog Post]({{ site.posts.first.url }}) | [Speaking](/speaking)
+[Latest Blog Post]({{ site.posts.first.url }}) | [Speaking](/speaking) | [Research](/research)
 
 ## {{ site.posts.first.title }}
 
