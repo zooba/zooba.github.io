@@ -1,6 +1,9 @@
 title: 'Steve Dower'
 description: 'Musings and Mutterings'
 
+plugins:
+  - jekyll-redirect-from
+
 lsi: false
 safe: true
 source: .

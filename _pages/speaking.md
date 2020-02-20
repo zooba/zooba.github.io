@@ -2,6 +2,8 @@
 layout: page
 title: Speaking
 slug: speaking
+redirect-from:
+  - /blog/speaking
 ---
 
 # 2019
