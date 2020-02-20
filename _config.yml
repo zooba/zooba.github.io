@@ -20,3 +20,6 @@ collections:
     output: true
     permalink: /blog/:slug
     is_root: false
+  pages:
+    output: true
+    permalink: /:slug
