@@ -2,7 +2,7 @@
 layout: page
 title: Speaking
 slug: speaking
-redirect-from:
+redirect_from:
   - /blog/speaking
 ---
 
