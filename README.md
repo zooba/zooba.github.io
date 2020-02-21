@@ -4,13 +4,19 @@ permalink: /
 is_root: true
 ---
 
-[Latest Blog Post]({{ site.posts.first.url }}) | [Speaking](/speaking) | [Research](/research)
+[Speaking](/speaking) | [Research](/research)
 
-## {{ site.posts.first.title }}
+## Latest Post: {{ site.posts.first.title }}
 
 {{ site.posts.first.excerpt }}
 
 [Continue reading...]({{ site.posts.first.url }})
+
+## My Pages
+
+*[Speaking](/speaking)* - My talk history and recordings
+
+*[Research](/research)* - My (past) research and publications
 
 ## Other Posts
 
