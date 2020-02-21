@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Research
+permalink: /research
 redirect_from: /blog/research
 ---
 

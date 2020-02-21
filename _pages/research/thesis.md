@@ -2,6 +2,7 @@
 layout: page
 title: Ph.D Thesis
 slug: thesis
+permalink: /research/thesis
 redirect_from: /blog/research/thesis
 ---
 
