@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Ph.D Thesis
+description: My thesis abstract, full text and supporting files.
 slug: thesis
 permalink: /research/thesis
 redirect_from: /blog/research/thesis

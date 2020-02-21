@@ -26,3 +26,13 @@ collections:
   pages:
     output: true
     is_root: false
+  research:
+    output: true
+    permalink: /research/:slug
+    redirect_from: /blog/research/:slug
+    is_root: false
+    order:
+      - thesis.md
+      - publications.html
+      - publications-bibtex.html
+      - oliver-30.md
