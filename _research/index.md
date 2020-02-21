@@ -7,9 +7,11 @@ redirect_from: /blog/research
 
 Pages in this section:
 <dl>
-{% for p in site.research %}
+{% for p in site.research.docs %}
+{% if p.url != page.url %}
 <dt><a href="{{ p.url }}">{{ p.title }}</a></dt>
-<dd>{{ p.description }}</dd>
+<dd>{{ p.description | markdownify }}</dd>
+{% endif %}
 {% endfor %}
 <dt><a href="/research/esdl">Evolutionary System Definition Language (ESDL)</a></dt>
 <dd>An overview page of ESDL, which was a central part of my Ph.D. work.</dd>

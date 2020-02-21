@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Oliver 30 TSP
-description: 'Details of a commonly used instance of the <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem">travelling salesman problem</a> that are not widely available online.'
+description: 'Details of a commonly used instance of the [travelling salesman problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem) that are not widely available online.'
 slug: oliver-30
 redirect_from: /blog/research/oliver-30
 sort_key: Z
