@@ -6,17 +6,20 @@ is_root: true
 
 <img src="/assets/me.128x128.jpg" alt="Me" class="alignright" />
 
+## My Pages
+
+**[About Me](/about)** - More than you need to know
+
+**[Speaking](/speaking)** - My talk history and recordings
+
+**[Research](/research)** - My (past) research and publications
+
+
 ## Latest Post: {{ site.posts.first.title }}
 
 {{ site.posts.first.excerpt }}
 
 [Continue reading...]({{ site.posts.first.url }})
-
-## My Pages
-
-**[Speaking](/speaking)** - My talk history and recordings
-
-**[Research](/research)** - My (past) research and publications
 
 ## My Posts
 
