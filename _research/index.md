@@ -14,8 +14,6 @@ Pages in this section:
 <dd>{{ p.description | markdownify }}</dd>
 {% endif %}
 {% endfor %}
-<dt><a href="/research/esdl-latex">ESDL Formatting (LaTeX)</a></dt>
-<dd>Some <a href="http://www.latex-project.org/">LaTeX</a> code for rendering ESDL listings.</dd>
 <dt><a href="/research/esdlgrammar">ESDL Grammar</a></dt>
 <dd>A BNF-style grammar for ESDL.</dd>
 </dl>
