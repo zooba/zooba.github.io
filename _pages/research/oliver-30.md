@@ -2,7 +2,6 @@
 layout: page
 title: Oliver 30 TSP
 slug: oliver-30
-permalink: /research/oliver-30
 redirect_from: /blog/research/oliver-30
 ---
 
