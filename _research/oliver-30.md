@@ -3,6 +3,8 @@ layout: page
 title: Oliver 30 TSP
 description: 'Details of a commonly used instance of the <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem">travelling salesman problem</a> that are not widely available online.'
 slug: oliver-30
+redirect_from: /blog/research/oliver-30
+sort_key: Z
 ---
 
 Oliver30 is a commonly used benchmark for the Travelling Salesman Problem (TSP). However, before this page, the city coordinates making up Oliver30 were not easily available online. Those that are available are quite often wrong (including my own technical report for a while). I have spent a long time trying to find the correct coordinates and as far as I can tell they are not online.

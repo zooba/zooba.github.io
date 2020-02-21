@@ -8,13 +8,13 @@ redirect_from: /blog/research
 Pages in this section:
 <dl>
 {% for p in site.research %}
-<dt><a href="{{ p.url }}">{{ p.name }}</a></dt>
-<dd style="padding-bottom: 6px;">{{ p.description }}</dd>
+<dt><a href="{{ p.url }}">{{ p.title }}</a></dt>
+<dd>{{ p.description }}</dd>
 {% endfor %}
 <dt><a href="/research/esdl">Evolutionary System Definition Language (ESDL)</a></dt>
-<dd style="padding-bottom: 6px;">An overview page of ESDL, which was a central part of my Ph.D. work.</dd>
+<dd>An overview page of ESDL, which was a central part of my Ph.D. work.</dd>
 <dt><a href="/research/esdl-latex">ESDL Formatting (LaTeX)</a></dt>
-<dd style="padding-bottom: 6px;">Some <a href="http://www.latex-project.org/">LaTeX</a> code for rendering ESDL listings.</dd>
+<dd>Some <a href="http://www.latex-project.org/">LaTeX</a> code for rendering ESDL listings.</dd>
 <dt><a href="/research/esdlgrammar">ESDL Grammar</a></dt>
-<dd style="padding-bottom: 6px;">A BNF-style grammar for ESDL.</dd>
+<dd>A BNF-style grammar for ESDL.</dd>
 </dl>
