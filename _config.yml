@@ -27,7 +27,7 @@ collections:
     output: true
     is_root: false
   research:
+    sort_by: sort_key
     output: true
     permalink: /research/:slug
     is_root: false
-    sort_by: sort_key

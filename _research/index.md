@@ -7,7 +7,7 @@ redirect_from: /blog/research
 
 Pages in this section:
 <dl>
-{% for p in site.research.docs %}
+{% for p in site.research %}
 {% if p.url != page.url %}
 <dt><a href="{{ p.url }}">{{ p.title }}</a></dt>
 <dd>{{ p.description | markdownify }}</dd>
