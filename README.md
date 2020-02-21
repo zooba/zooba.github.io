@@ -15,6 +15,8 @@ is_root: true
 
 **[Research](/research)** - My (past) research and publications
 
+**[@zooba](https://twitter.com/zooba)** - My Twitter stream of consciousness
+
 ## Latest Post: {{ site.posts.first.title }}
 
 {{ site.posts.first.excerpt }}
