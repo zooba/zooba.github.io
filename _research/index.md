@@ -7,7 +7,8 @@ redirect_from: /blog/research
 
 Pages in this section:
 <dl>
-{% for p in site.research %}
+{% assign research = site.research | sort:"sort_key" %}
+{% for p in research %}
 {% if p.url != page.url %}
 <dt><a href="{{ p.url }}">{{ p.title }}</a></dt>
 <dd>{{ p.description | markdownify }}</dd>
