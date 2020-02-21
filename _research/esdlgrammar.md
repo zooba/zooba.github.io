@@ -4,6 +4,7 @@ title: ESDL Grammar
 description: A BNF-style grammar for ESDL.
 slug: esdlgrammar
 redirect_from: /blog/research/esdlgrammar
+sort_key: G
 ---
 
 ESDL is very much still under development. Part of this development process requires community feedback and engagement. Ideally, a number of alternate implementations will be constructed, allowing a greater range of researchers to experiment with ESDL.
