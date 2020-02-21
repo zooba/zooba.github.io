@@ -4,7 +4,7 @@ permalink: /
 is_root: true
 ---
 
-<img src="/assets/me.128x128.png" alt="Me" class="alignright" />
+<img src="/assets/me.128x128.jpg" alt="Me" class="alignright" />
 
 ## Latest Post: {{ site.posts.first.title }}
 
