@@ -9,7 +9,6 @@ safe: true
 source: .
 incremental: false
 excerpt_separator: '<!--more-->'
-permalink: /:path/:basename
 highlighter: rouge
 gist:
   noscript: false

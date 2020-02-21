@@ -2,8 +2,8 @@
 layout: page
 title: Speaking
 slug: speaking
-redirect_from:
-  - /blog/speaking
+permalink: /speaking
+redirect_from: /blog/speaking
 ---
 
 <!--more-->
