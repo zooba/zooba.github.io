@@ -4,7 +4,7 @@ permalink: /
 is_root: true
 ---
 
-[Speaking](/speaking) | [Research](/research)
+<img src="/assets/me.128x128.png" alt="Me" class="alignright" />
 
 ## Latest Post: {{ site.posts.first.title }}
 
@@ -14,12 +14,12 @@ is_root: true
 
 ## My Pages
 
-*[Speaking](/speaking)* - My talk history and recordings
+**[Speaking](/speaking)** - My talk history and recordings
 
-*[Research](/research)* - My (past) research and publications
+**[Research](/research)** - My (past) research and publications
 
-## Other Posts
+## My Posts
 
 {% for post in site.posts %}
-<strong>{{ post.date | date_to_string }}</strong> - [{{post.title}}]({{post.url}})
+**[{{ post.date | date_to_string }}]({{post.url}})** - {{post.title}}
 {% endfor %}
