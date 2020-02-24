@@ -10,6 +10,8 @@ tags:
 - Visual Studio
 ---
 
+(Originally posted at [Medium.com](https://medium.com/microsoft-open-source-stories/python-at-microsoft-flying-under-the-radar-eabbdebe4fb0))
+
 Python is an important piece of Microsoft's future in the cloud, being one of the essential languages for services and teams to support, as well as the most popular choice for the rapidly growing field of data science and analytics both inside and outside of the company. But Python hasn't always had such a prestigious position around Microsoft.
 
 In 2010, our few [Pythonistas](https://en.wiktionary.org/wiki/Pythonista) were flying under the radar, in case somebody noticed that they could reassign a few developers to their own project. The team was small, leftover from a previous job, but was chipping away at a company culture that suffered from ["not invented here"](https://en.wikipedia.org/wiki/Not_invented_here) syndrome: **Python was a language that belonged to other people, and so Microsoft was not interested.**
@@ -68,12 +70,12 @@ You can tell when a corporation's culture is starting to change when people appr
 
 The discussion went roughly like this:
 
-> CLI team: "We don't really know Python, but it seems like Python would be a good choice for an extensible command-line tool."
-> Python team: "Yes, it would be. 😊"
-> CLI: "Could you perhaps help us out by building the basic structure? Just a few commands, and show us how to preserve login state and do configuration files? Maybe localization?"
-> Python: "Of course, happy to."
-> CLI: "How many weeks will it take to build something we can try out?"
-> Python: "It'll be ready by Wednesday."
+* **CLI team:** "We don't really know Python, but it seems like Python would be a good choice for an extensible command-line tool."
+* **Python team:** "Yes, it would be. 😊"
+* **CLI:** "Could you perhaps help us out by building the basic structure? Just a few commands, and show us how to preserve login state and do configuration files? Maybe localization?"
+* **Python:** "Of course, happy to."
+* **CLI:** "How many weeks will it take to build something we can try out?"
+* **Python:** "It'll be ready by Wednesday."
 
 Surprised, and probably more skeptical than they let on, the team accepted our offer and I put together [a sample](https://github.com/Azure/azure-cli/tree/549f1be8ee881fb309caf3559d9232d3191af81d). The Azure CLI team took this and have turned it into possibly the largest Python command line application in the world. [Knack](https://github.com/Microsoft/knack) is now its own Python framework for high-performance large-scale command line applications, handling thousands of commands and options while supporting argument completion, prompting, extensibility, configuration files, and more.
 
