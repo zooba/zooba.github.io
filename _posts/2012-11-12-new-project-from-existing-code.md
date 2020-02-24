@@ -36,16 +36,22 @@ The meaning of each value is relatively straightforward, but to summarise:
 
 WizardPageObjectAssembly
 : Full name of the assembly containing the wizard implementation.
+
 WizardPageObjectClass
 : Full name of the call implementing the wizard.
+
 ProjectType
 : The name (or a string resource within the project type's package) to display in the dropdown box.
+
 ImportProjectsDir
 : Directory containing the following three files.
+
 ClassLibProjectFile
 : Filename of the project template for a class library project.
+
 ConsoleAppProjectFile
 : Filename of the project template for a console application project.
+
 WindowsAppProjectFile
 : Filename of the project template for a windowed application project.
 

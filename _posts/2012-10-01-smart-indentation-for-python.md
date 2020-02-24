@@ -112,14 +112,14 @@ When parsing starts at the end of line 4, `exprRangeNoImplicitOpen` will referen
 
 Using the two expressions, we can create a new set of indentation rules:
 * If `exprRangeImplicitOpen` was found, `exprRangeNoImplicitOpen` was not (or is different to `exprRangeImplicitOpen`), and the expression starts with an open grouping (`(`, `[` or `{`), we are inside a set of brackets.
- * In this case, we match the indentation of the brackets + 1, as on line 2 of the earlier example.
+    - In this case, we match the indentation of the brackets + 1, as on line 2 of the earlier example.
 * Otherwise, if `exprRangeNoImplicitOpen` was found and it is preceded by a `return` or `raise`, `break` or `continue` statement, OR if the last token is one of those keywords, the previous line must be one of those statements.
- * In this case, we copy the indentation and reduce it by one level for the following line.
+    - In this case, we copy the indentation and reduce it by one level for the following line.
 * Otherwise, if both ranges were found, we have a valid expression on one line and one that spans multiple lines.
- * This occurred in the example shown above.
- * In this case, we find the lowest indentation on any line of the multi-line expression and use that.
+    - This occurred in the example shown above.
+    - In this case, we find the lowest indentation on any line of the multi-line expression and use that.
 * Otherwise, if the last non-newline character is a colon, we are at the first line of a new block.
- * In this case, we copy the indentation and increase it by one level.
+    - In this case, we copy the indentation and increase it by one level.
  
 These rules are implemented on lines 105 through 143 of [AutoIndent.cs](https://github.com/zooba/zooba.github.io/tree/master/assets/ptvscode/AutoIndent-41aa3fe86341.cs). However, with this approach there are many cases that need special handling. Most of the above 'rules' are the result of these being discovered. For example, issue [157](http://pytools.codeplex.com/workitem/157) goes through a lot of these edge cases, and while most of them were resolved, it remained a less-than-robust algorithm. The alternative approach, described below, was added to handle most of these issues directly rather than as workarounds.
 
@@ -152,14 +152,14 @@ Since the parser state is known at the first token, we can parse forward and tra
 
 * At a new line, set the indentation level to however many spaces appear at the start of the line.
 * At an open bracket, set the indentation level to the column of the bracket plus one and remember the previous level.
- * This ensures that if we reach the end of the list while inside the group, our current level lines up with the group and not the start of the line.
+    - This ensures that if we reach the end of the list while inside the group, our current level lines up with the group and not the start of the line.
 * At a close bracket, restore the previous indentation level.
- * This ensures that whatever indentation occurs within a group, we will use the original indentation for the line following.
+    - This ensures that whatever indentation occurs within a group, we will use the original indentation for the line following.
 * At a line continuation character (a backslash at the end of a line), skip ahead until the end of the entire line of code.
 * If the token is a statement to unindent after (`return` and friends), set a flag to unindent.
- * This flag is preserved, restored and reset with the indentation level.
+    - This flag is preserved, restored and reset with the indentation level.
 * If the token is a colon character and we are not currently inside a group, set a flag to add an indent.
- * And, if the following token is not an end-of-line token, also set the unindent flag.
+    - And, if the following token is not an end-of-line token, also set the unindent flag.
 
 After all tokens have been scanned, we will have the required indentation level and two flags indicating whether to add or remove an indent level. These flags are separate because they may both be set (for example, after a single-line `if` statement such as `if a == b: return False`). If they don't cancel each other out, then an indent should be added or removed to the calculated level to find where the next line should appear:
 
@@ -179,6 +179,7 @@ private struct LineInfo {
     public bool ShouldIndentAfter;
     public bool ShouldDedentAfter;
 }
+```
 
 And the structure of the parsing loop looks like this (edited for length):
 

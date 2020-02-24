@@ -88,4 +88,4 @@ One of the concerns with the previous version of this wizard was discoverability
 
 # Summary
 
-In this post we looked at the new New Project from Existing Code wizard that replaced the one from [last time](/blog/new-project-from-existing-code/). Not using the existing implementation allowed us to design the wizard specifically for Python code and implement it efficiently. We also made the feature more discoverable by placing it first in the list of templates, which is how new projects are usually created. This feature was first released in [Python Tools for Visual Studio](http://pytools.codeplex.com/) 1.5RC.
+In this post we looked at the new New Project from Existing Code wizard that replaced the one from [last time](/blog/new-project-from-existing-code/). Not using the existing implementation allowed us to design the wizard specifically for Python code and implement it efficiently. We also made the feature more discoverable by placing it first in the list of templates, which is how new projects are usually created. This feature was first released in [Python Tools for Visual Studio](https://github.com/Microsoft/PTVS) 1.5RC.
