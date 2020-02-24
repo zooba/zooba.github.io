@@ -3,7 +3,9 @@ layout: post
 title: Debugging Cython with WinDBG
 slug: debugging-cython-with-windbg
 categories: Python
-tags: cython,debugging
+tags:
+- cython
+- debugging
 ---
 
 This is one of those "note to self" kinds of blogs. I spent <em>just</em> enough time figuring this out right now that I don't want to repeat, so here's a problem that I hit and the solution. Hopefully it helps someone else besides future-me.

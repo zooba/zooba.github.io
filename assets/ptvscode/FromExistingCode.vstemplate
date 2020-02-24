@@ -1,0 +1,20 @@
+<vstemplate version="2.0.0" type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <templatedata>
+    <name>From Existing Python code</name>
+    <description>Create a new project using code files that are already in a folder hierarchy.</description>
+    <icon>__TemplateIcon.ico</icon>
+    <projecttype>Python</projecttype>
+    <sortorder>10</sortorder>
+    <numberofparentcategoriestorollup>2</numberofparentcategoriestorollup>
+    <createnewfolder>false</createnewfolder>
+    <defaultname>PythonApplication</defaultname>
+    <providedefaultname>true</providedefaultname>
+  </templatedata>
+  <templatecontent>
+    <project file="FromExistingCode.pyproj" replaceparameters="true"></project>
+  </templatecontent>
+  <wizardextension>
+    <assembly>Microsoft.PythonTools.ImportWizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</assembly>
+    <fullclassname>Microsoft.PythonTools.ImportWizard.Wizard</fullclassname>
+  </wizardextension>
+</vstemplate>

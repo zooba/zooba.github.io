@@ -1,8 +1,13 @@
 ---
-layout: page
-title:
+layout: post
+title: Async API for Python
 slug: async-api-for-python
-redirect_from: /blog/async-api-for-python
+categories: Python
+tags:
+- ideas
+- async
+- python
+redirect_from: /async-api-for-python
 ---
 
 So over on the [python-ideas](https://mail.python.org/mailman/listinfo/python-ideas) mailing list for the last couple of weeks, a discussion has been raging about adding a standard asynchronous API to Python. Quite coincidentally, we spent a couple of weeks at work looking into exactly this, so we were keen to join the discussion.
@@ -40,13 +45,13 @@ This is simple, but also limited. Scale this up to 100 threads and it is likely 
 Long-running, CPU-bound tasks are often best served by a CPU thread. The blocking operation in this case could be any form of processing where the result is not required immediately, which is true for any case involving a freely-interactive user interface (for example, a GUI, but not normally a TTY). The aim here is to perform the long operation while the user is not interacting with the program, but suspend it when the user wants to do something.
 
 # Why Futures ARE The Solution
-Futures, as currently implemented in [concurrent.futures](https://docs.python.org/3/library/concurrent.futures.html#future-objects) are perfectly suited to a standard API because they are an interface, not an implementation.<sup>1</sup> The nature of non-blocking calls requires that _something_ is returned, and that the caller either provides a callback or polls for a result. The `Future` class encapsulates both of these options, allowing the caller to choose the contract they prefer. Further, because a `Future` is independent of the operation, the callee can choose their own implementation.
+Futures, as currently implemented in [concurrent.futures](https://docs.python.org/3/library/concurrent.futures.html#future-objects) are perfectly suited to a standard API because they are an interface, not an implementation.[1] The nature of non-blocking calls requires that _something_ is returned, and that the caller either provides a callback or polls for a result. The `Future` class encapsulates both of these options, allowing the caller to choose the contract they prefer. Further, because a `Future` is independent of the operation, the callee can choose their own implementation.
 
-(<sup>1</sup> Obviously there is an implementation there, but users of futures should not be depending on implementation details. This is why functions like `set_result` are documented as "private".)
+([1] Obviously there is an implementation there, but users of futures should not be depending on implementation details. This is why functions like `set_result` are documented as "private".)
 
-For example, consider reading a buffer from a file. The Python API could be "read_async(byte_count : int) -> Future". To implement this on Windows you could call [ReadFileEx](https://msdn.microsoft.com/en-us/library/windows/desktop/aa365468.aspx) and provide a "completion routine" (callback) that will set the future's result. On Linux, [read](https://www.kernel.org/doc/man-pages/online/pages/man2/read.2.html) will<sup>2</sup> always block while reading file data into memory, and the only truly non-blocking way to read is to use a separate thread (more on this idea later). Because the interface is through a `Future`, all code calling "read_async(x).result()" or "read_async(x).add_done_callback(...)" is portable _and_ efficient for both platforms.
+For example, consider reading a buffer from a file. The Python API could be "read_async(byte_count : int) -> Future". To implement this on Windows you could call [ReadFileEx](https://msdn.microsoft.com/en-us/library/windows/desktop/aa365468.aspx) and provide a "completion routine" (callback) that will set the future's result. On Linux, [read](https://www.kernel.org/doc/man-pages/online/pages/man2/read.2.html) will[2] always block while reading file data into memory, and the only truly non-blocking way to read is to use a separate thread (more on this idea later). Because the interface is through a `Future`, all code calling "read_async(x).result()" or "read_async(x).add_done_callback(...)" is portable _and_ efficient for both platforms.
 
-(<sup>2</sup> The man-page suggests that while some file systems may respect `O_NONBLOCK`, most treat local files as always ready and then block while the read occurs.)
+([2] The man-page suggests that while some file systems may respect `O_NONBLOCK`, most treat local files as always ready and then block while the read occurs.)
 
 Requiring both polling and callback features of `Future` be implemented is not unreasonable, since callback APIs can be trivially wrapped with a polling interface, while polling and blocking APIs can become callback-based with the addition of a thread (more on this later). Importantly, it is necessary for the portability of the API that _all_ implementers support both `result()` and `add_done_callback()`. This does not require the standard `Future` class to be used directly - a subclass would be equally valid, and in some cases even beneficial (more on this later, too).
 
