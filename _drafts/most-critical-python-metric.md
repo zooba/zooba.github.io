@@ -37,7 +37,7 @@ In response, I don't offer them specific advice. I give them a simple question, 
 
 And as it happens, well-designed code fares well under most complexity metrics (except for "source code bytes on disk", but those are cheap).
 
-The question is... how will I test this?
+The question is... how am I going to test this?
 
 # How will I test this?
 
@@ -57,28 +57,59 @@ But rather than being a burden, writing tests for dynamic code is actually the b
 
 To set some context, here are a few of my characteristics of well-designed architectures. (You may disagree with these, in which case I will assume you have poorly designed software.)
 
-* easy to navigate (find a piece of code based on what it does)
-* easy to modify (change a piece of code without impacting its dependents)
-* easy to identify side effects (tell whether a piece of code has external impact)
-* easy to avoid side effects (all external impact can be bypassed)
+Easy to navigate
+: You can easily find a piece of code based on knowing what it does
+
+Easy to modify
+: You can easily change a piece of code without impacting things that use it
+
+Easy to identify side effects
+: You can easily tell whether a piece of code requires/modifies external state
+
+Easy to avoid side effects
+: You can use part of your code and deliberately bypass any external impact
 
 The following sections will briefly describe what I mean by these characteristics, and suggest how writing tests will help you achieve them.
 
+There's a noticeable lack of code examples, because I'm not trying to _teach_ anything here, merely to provoke deep(er) thoughts. With a bit of luck, some readers will find themselves inspired to take these ideas and present them in a form that's accessible to more people.
+
 # Easy to navigate
 
-TODO
+We spend much more time reading code than writing it. _Far_ more time. So much so that it's a little disappointing how much we invest in coding tools compared to reading tools, but that's a topic for another rant...
 
-* unit tests, lead to...
-* separate functions, lead to...
-* better naming, lead to...
-* better sequencing
+Often, you are reading your code because it is doing something wrong. This implies that you know what it ought to be doing, and so are reading with the intent to locate a specific part of the code. Once you locate that piece of code, you'll want to understand it (so you can fix it), so hopefully it is small enough to fit in your short-term memory.
+
+Designing for unit tests provides everything we're hoping for. If you have a long function that does multiple things, you can't write a unit test for it (since it represents multiple units), so you'll have to refactor it into a sequence (or chain) of functions (or methods).
+
+Once refactored into separate, unit-sized functions, you've now given yourself "headings" for each piece of code. Headings are _much_ easier to navigate than a single paragraph of text.
+
+It's up to you, but if each function has a name that represents what it does, it's like you've given it a sensible heading. And if each function has a coherent, "works/doesn't work" step of the overall functionality, the name will be easy, and the place(s) it is called from will be simple sequences of function calls.
+
+When you need to find that functionality later, rather than it being in the middle of a run-on paragraph of code, it will be in a nice, bounded, labelled, unit-testable block.
 
 # Easy to modify
 
-* separate functions with sequence have implied in/outs
-* unit tests for in/outs prove lack of change
+Once you've found the piece of code, you likely want to modify it. This means understanding where it fits in the overall sequence, what other components produce its inputs, and which depend on its outputs and side effects.
+
+Assuming you have already broken up your monolithic functions into coherent chunks of functionality, the next step in making them testable is to be clear about the inputs and outputs.
+
+We'll deal with side effects later, which means right now we are concerned with functions that return values and/or mutate arguments. The former are easy to test, and the latter are perfect for [`unittest.mock`](https://docs.python.org/3/library/unittest.mock.html).
+
+Your goal in testing function inputs and outputs is to _exhaustively_ prove that the _behaviour has not changed_.
+
+Easily modifying code means being able to quickly detect when you've accidentally altered the behaviour. So if it's tested exhaustively, it's easier to modify. But even if the tests are not exhaustive, the design implications are useful.
+
+Functions that have complex interactions between arguments, unpredictable results, or too many arguments are not just difficult to tets. They're difficult to read, understand, use, and modify.
+
+Imagine your function takes eight `True`/`False` flags. That's 256 combinations you need to test, not including genuine error cases. Depending on your patience, you might get through the first ten or twenty before deciding to refactor the function.
+
+Or maybe your function ends by updating a parameter's attribute when it could return the calculated result. Each test is now three steps (create object, call function, check object) instead of just checking the function result.
+
+If it's painful to write tests for your functions, it will be painful to modify them as well.
 
 # Easy to identify side effects
+
+
 
 * tests dislike side effects (ordering, reset, etc.)
 * side-effect free logic in transform steps
