@@ -143,3 +143,5 @@ Various languages claim to be control complexity through fixed code styles, flex
 Regardless of how much code you have or the style it's been written in, if it's easy to navigate, easy to modify, and easy to identify and avoid side effects, you've likely got complexity under control.
 
 And the easiest way to control complexity in Python is to write tests. Not because test coverage magically results in better code, but because architecting your code to be testable is the same as architecting for humans.
+
+(Contact me [on Twitter](https://twitter.com/zooba/) for discussion.)
