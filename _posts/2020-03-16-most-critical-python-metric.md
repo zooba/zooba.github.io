@@ -9,6 +9,7 @@ keywords:
 - language
 - metrics
 - python
+- testing
 ---
 
 Code metrics are a popular way to analyse the complexity of our software. For some reason, we are attracted to single-figure summaries of quality, whether it's lines of code, [cyclomatic complexity](https://wikipedia.org/wiki/Cyclomatic_complexity), or the [Pylint score](http://pylint.pycqa.org/en/latest/user_guide/output.html#score-section).
