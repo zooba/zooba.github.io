@@ -21,7 +21,7 @@ Comparing measurements is also just as ridiculous with code as it is with people
 
 In that light, my favourite metric for Python code is "area under the indent" (less is better).
 
-![Area under the indent example](TODO)
+![Area under the indent example](/asserts/AreaUnderIndent.png)
 
 This measurement (or estimate) captures both lines of code and nesting depth, which is more valid for Python than other languages because of Python's one-effect-per-line style. If you enforce a reasonable line length limit, then you'll also prevent people packing extremely long expressions into one line in order to game the metric.
 
@@ -107,22 +107,38 @@ Or maybe your function ends by updating a parameter's attribute when it could re
 
 If it's painful to write tests for your functions, it will be painful to modify them as well.
 
-# Easy to identify side effects
+# Easy to identify and avoid side effects
 
+Side effects are simultaneously the biggest challenge in software development, and also the entire point of it. While once upon a time producing a single result was a worthwhile benefit of a computer (person or device), today we rely on multiple asynchronous outputs from any computation, as well as ambient inputs from external data sources.
 
+Tests dislike side effects. They _really_ dislike side effects. Code with side effects implicitly has ordering constraints, timing constraints, complex setup and teardown processes, single threadedness, and may require additional or platform-specific hardware.
 
-* tests dislike side effects (ordering, reset, etc.)
-* side-effect free logic in transform steps
-* side-effect logic in apply steps
+And unsurprisingly, humans also dislike side effects. When reading code, you have to keep an abstract state machine running inside your head to track what each variable currently holds so you can figure out which operations will do what. Each external source of data (reading from a file, for example) resets your in-brain state to "I don't know". Each external action (opening file) is an operation that resets your in-brain sequence to "I don't know".
 
-# Easy to avoid side effects
+Side effects spoil our ability to reason about how code will be executed.
 
-* carefully (or don't) test apply steps, or, inject applier functions
+So when you are architecting your code for testing, you're going to try and isolate side effects from computation. Trying to test a function that adds a list of numbers from a file? Refactor it into a function that opens and reads the file, and a function that adds the numbers. Now you can test the addition function without needing a file system.
+
+Copying a set of files from one location to another? Collect all the metadata about those files in one function, calculate which ones need to be copied in the next, and then do the actual copying in the third function.
+
+This *read*->*transform*->*apply* sequence clarifies which external state is used and where. It forces you to give each function useful names, and determine the structure of data passed between them.
+
+You can now test the transformation on fake data, as exhaustively as you like, without any of the constraints imposed by side effects.
+
+You can more easily find, understand, and fix the code based on the problem description, and debug issues by comparing your function's inputs and outputs against the system's reality.
+
+The transform logic is more portable, as all platform-specific code is in the reading or applying stages. And your unit test matrix is narrower, even as you test more functions, because each is more focused. One edge case on one platform impacts one test, not your entire suite.
+
+Most other side effects look very much like external state. Updating a field on some global object? Sending a progress message? Checking a configuration option? Make them inputs to your functions - a callback function (`tell_user`) is better than a global name (`print`), _even if the default argument is actually just the global_ (`tell_user=print`).
+
+One day, you'll need to capture or suppress side effects for testing. The next, you'll want to find the code that causes a particular side effect. In both cases, you will benefit from having made them explicit parts of your interface.
 
 # Summary
 
 While easily-measured metrics are a popular way to evaluate code complexity, they can never give you the full story.
 
-Regardless of how much code you have, if it's easy to navigate, easy to modify, and easy to identify and avoid side effects, you've likely got complexity under control.
+Various languages claim to be control complexity through fixed code styles, flexible code styles, static typing, dynamic typing, nominal typing, structural typing, separate interface definitions, converged interface definitions, significant whitespace, insiginificant whitespace, and more.
+
+Regardless of how much code you have or the style it's been written in, if it's easy to navigate, easy to modify, and easy to identify and avoid side effects, you've likely got complexity under control.
 
 And the easiest way to control complexity in Python is to write tests. Not because test coverage magically results in better code, but because architecting your code to be testable is the same as architecting for humans.
