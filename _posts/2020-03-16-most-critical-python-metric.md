@@ -74,7 +74,7 @@ The following sections will briefly describe what I mean by these characteristic
 
 <a href="https://www.cosmicpython.com"><img src="/assets/percival_architecture_patterns_cover.png" alt="Architecture Patterns with Python book cover" class="alignright" /></a>
 
-There's a noticeable lack of code examples, because I'm not trying to _teach_ anything here, merely to provoke deep(er) thoughts. With a bit of luck, some readers will find themselves inspired to take these ideas and present them in a form that's accessible to more people. For example, [Cosmic Python](https://www.cosmicpython.com) got here _years_ ahead of me, and has blogs posts and books that get _very_ detailed about architecture that serves the developer (not the developer's ego).
+There's a noticeable lack of code examples, because I'm not trying to _teach_ anything here, merely to provoke deep(er) thoughts. With a bit of luck, some readers will find themselves inspired to take these ideas and present them in a form that's accessible to more people. For example, [Cosmic Python](https://www.cosmicpython.com) got here _years_ ahead of me, and has blogs posts and books that get _very_ detailed about architecture that serves the developer (not the developer's ego). Definitely worth reading if my thoughts here resonate but you aren't sure what to do next.
 
 # Easy to navigate
 
