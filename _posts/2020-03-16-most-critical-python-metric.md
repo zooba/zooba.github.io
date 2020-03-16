@@ -18,11 +18,13 @@ Personally, I think using these are about as valuable as judging another person 
 
 Which is to say, an okay metric might get the conversation started, but it won't help you _know_ them. That takes time and effort, humility, seeking to understand their background, and changing your mind about previous assumptions when something about them challenges you.
 
+<!--more-->
+
 Comparing measurements is also just as ridiculous with code as it is with people, _except_ when measuring your own progress. If you know which direction is "better", then you can tell whether a change moved in that direction.
 
 In that light, my favourite metric for Python code is **area under the indent** (where less area is better).
 
-![Area under the indent example](/asserts/AreaUnderIndent.png)
+![Area under the indent example](/assets/AreaUnderIndent.png)
 
 This measurement (or estimate) captures both lines of code and nesting depth, which is more valid for Python than other languages because of Python's one-action-per-line style. With a reasonable length limit, you also prevent people packing extremely long expressions into one line to try and game the metric.
 
