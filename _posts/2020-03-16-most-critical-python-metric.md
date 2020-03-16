@@ -74,9 +74,9 @@ Easy to avoid side effects
 
 The following sections will briefly describe what I mean by these characteristics, and suggest how writing tests will help you achieve them.
 
-<a href="https://www.cosmicpython.com"><img src="/assets/percival_architecture_patterns_cover.png" alt="Architecture Patterns with Python book cover" class="alignright" /></a>
+<a href="https://www.cosmicpython.com"><img src="/assets/percival_architecture_patterns_cover.jpg" alt="Architecture Patterns with Python book cover" class="alignright" /></a>
 
-There's a noticeable lack of code examples, because I'm not trying to _teach_ anything here, merely to provoke deep(er) thoughts. With a bit of luck, some readers will find themselves inspired to take these ideas and present them in a form that's accessible to more people. For example, [Cosmic Python](https://www.cosmicpython.com) got here _years_ ahead of me, and has fantastic books and blogs that get into details about architectures that serve the developer (and not the developer's ego). If my ideas here resonate but you aren't sure what to do next, I recommend looking at some of his work.
+There's a noticeable lack of code examples, because I'm not trying to _teach_ anything here, merely to provoke deep(er) thoughts. With a bit of luck, some readers will find themselves inspired to take these ideas and present them in a form that's accessible to more people. For example, [Cosmic Python](https://www.cosmicpython.com) (and [TDDwP](https://www.obeythetestinggoat.com/)) got here _years_ ahead of me, and has fantastic books and blogs that get into details about architectures that serve the developer (and not the developer's ego). If my ideas here resonate but you aren't sure what to do next, I recommend looking at some of his work.
 
 # Easy to navigate
 
