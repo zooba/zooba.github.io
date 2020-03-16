@@ -150,4 +150,4 @@ Regardless of how much code you have or the style it's been written in, if it's 
 
 And the easiest way to control complexity in Python is to write tests. Not because test coverage magically results in better code, but because architecting your code to be testable is the same as architecting for humans.
 
-(Contact me [on Twitter](https://twitter.com/zooba/) for discussion.)
+(Contact me [on Twitter](https://twitter.com/zooba/status/1239523786254422016?s=20) for discussion.)
