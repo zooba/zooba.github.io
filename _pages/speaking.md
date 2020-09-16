@@ -15,7 +15,7 @@ redirect_from: /blog/speaking
 
 ## November
 
-"[Run Python in production without compromising your security](https://myignite.techcommunity.microsoft.com/sessions/83974)", Microsoft Ignite, Orlando
+"Run Python in production without compromising your security", Microsoft Ignite, Orlando (almost identical content to "The Secret Life of Python" as presented at PyData NYC 2019 and North Bay Python 2019)
 
 "The Secret Life of Python", PyData NYC 2019, New York
 
