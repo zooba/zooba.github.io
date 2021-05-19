@@ -79,7 +79,7 @@ redirect_from: /blog/speaking
 
 "[I Installed Python 3.6 On Windows And I Liked It](http://pyvideo.org/pycon-us-2017/i-installed-python-36-on-windows-and-i-liked-it.html)", PyCon US 2017, Portland <small>[(direct YouTube link)](https://www.youtube.com/watch?v=w6GTdHFkMwY)</small>
 
-"Top Python Questions", Microsoft Virtual Academy, Seattle (series)
+"Top Python Questions", Microsoft Virtual Academy, Seattle (series) ([from archive.org](https://archive.org/download/microsoftvirtualacadamy2019/English/Course%2042584%20-%20Top%20Python%20Questions.zip), 447 MB, .zip))
 
 "[A lap around Python tools in Visual Studio](https://channel9.msdn.com/events/Build/2017/P4095)", Build 2017, Seattle (prerecorded)
 
