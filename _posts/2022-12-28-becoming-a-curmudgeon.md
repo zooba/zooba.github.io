@@ -49,4 +49,4 @@ It's not an easy job, but it's an important job. It will make you redundant for 
 
 Sounds like the perfect job for a curmudgeon.
 
-<small>(Image blatantly stolen from [this post](https://elizabethstavis.wordpress.com/2013/09/07/shifting-from-curmudgeons-to-readers/) about teaching kids about curmudeons, though I'm betting the image was stolen by them, too.)</small>
+<small>(Image blatantly stolen from [this post](https://elizabethstavis.wordpress.com/2013/09/07/shifting-from-curmudgeons-to-readers/) about teaching kids about curmudgeons, though I'm betting the image was stolen by them, too.)</small>
