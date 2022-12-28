@@ -9,6 +9,8 @@ keywords:
 
 At work, I often joke that I've reached the point where I get to be a curmudgeon -- that cranky old person who brings up rose-tinted stories from their past. And while I make it sound like a joke, when I then go on to share lessons learned from the Windows Phone developer experience or early [HPC Server](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/hpc-server-2012-r2-and-2012/jj899572(v=ws.11)), there's certainly some truth to it.
 
+![Curmudgeon](/assets/2022-12-curmudgeon.png)
+
 Usually where this comes up is during mentoring sessions.
 
 <!--more-->
@@ -46,3 +48,5 @@ Eventually, when you've done the time, and you've done the work, you'll be ready
 It's not an easy job, but it's an important job. It will make you redundant for that person, but there are plenty more who are still trying to survive on their own. It's a job that will influence hundreds of projects, but the gratitude will be all in private.
 
 Sounds like the perfect job for a curmudgeon.
+
+<small>(Image blatantly stolen from [this post](https://elizabethstavis.wordpress.com/2013/09/07/shifting-from-curmudgeons-to-readers/) about teaching kids about curmudeons, though I'm betting the image was stolen by them, too.)</small>
