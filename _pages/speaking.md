@@ -8,6 +8,26 @@ redirect_from: /blog/speaking
 
 <!--more-->
 
+# 2022
+# September
+
+"[Breaking Numbers in the Name of Security](https://youtu.be/bDo0FKmosnA?t=1712)", PyCon UK 2022, Cardiff
+
+## July
+
+"[Tales of Python Security](https://youtu.be/9EknwbLYSsU)", EuroPython 2022, Dublin
+
+"[CPython Developer Panel](https://youtu.be/0m2Cy5X6lcE)", EuroPython 2022, Dublin
+
+## May
+
+"Tales of Python Security", Engineering Conference, Microsoft
+
+# 2021
+## November
+
+"Helping your Company to Love Python", PyCon Blackrock 2021 (keynote; video available on private request)
+
 # 2019
 ## December
 
