@@ -205,4 +205,4 @@ If you want to check out a more complex project that uses this approach, you can
 
 Running into issues or have ideas for making app redistribution better? Come and join the discussion [on the Python forums](https://discuss.python.org/c/packaging/14).
 
-_Comments and discussion [on X](https://x.com/zooba)_
+_Comments and discussion [on X](https://x.com/zooba/status/1875633314343874692)_
