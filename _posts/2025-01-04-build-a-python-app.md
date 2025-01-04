@@ -126,7 +126,7 @@ except:
     sys.exit(-1)
 ```
 
-Notice that we don't have to set up any library paths or anything? That'll be handled naturally when we set up our layout. However, if you were to change the layout in some ways you may
+Notice that we don't have to set up any library paths or anything? That'll be handled naturally when we set up our layout. However, if you were to change the layout in some ways you may need to add more code to initialisation.
 
 We also don't pass any arguments to our `main()` function. If you needed them, you'd update the [`PyObject_CallMethod`](https://docs.python.org/3.13/c-api/call.html#c.PyObject_CallMethod) call. Note that `sys.argv` doesn't get initialised here - that wouldn't be very "isolated" - so if you want to pass command line arguments then you'll be doing a bit of converting.
 
