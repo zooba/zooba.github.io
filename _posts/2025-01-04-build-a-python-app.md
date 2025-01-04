@@ -147,7 +147,7 @@ Now if you run `MyAwesomeApp.exe`, you get... nothing.
 
 Huh?
 
-Diagnosing this problem could take some time, so I'll save a few steps. The exit code of your app was `-1073741515`, or more readably, 0xC0000135. This is the error you get when a DLL your app relies on cannot be found. In this case, it's because it doesn't actually have `python313.dll` available. So let's go get it!
+Diagnosing this problem could take some time, so I'll save a few steps. The exit code of your app was `-1073741515`, or more readably, `0xC0000135`. This is the error you get when a DLL your app relies on cannot be found. In this case, it's because it doesn't actually have `python313.dll` available. So let's go get it!
 
 # Create a Python app layout
 
