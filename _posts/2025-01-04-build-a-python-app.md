@@ -181,7 +181,7 @@ python313.zip
 #import site
 ```
 
-This file lists the contents of our `sys.path` - that is, the directories that Python is allowed to import files from. Its filename matches the DLL, which means it will always be used whenever we load Python from our app's directory. The default contents will search the `python313.zip` file (which contains the standard library, and should be left zipped up) as well as the current directory, which at this point also contains our dependencies. In this case, we don't need to modify `python313._pth` at all, but if we wanted to put our Python code in a different directory, we would have to update it to include that path.
+This file lists the contents of our `sys.path` - that is, the directories from which Python is going to import files. Its filename matches the DLL, which means it will always be used whenever we load Python from our app's directory. The default contents will search the `python313.zip` file (which contains the standard library, and should be left zipped up) as well as the current directory, which at this point also contains our dependencies. In this case, we don't need to modify `python313._pth` at all, but if we wanted to put our Python code in a different directory, we would have to update it to include that path.
 
 Finally, we want to copy `MyAwesomeApp.exe` that we built previously into the layout directory. _Now_ when we run it, it will import and launch our application. And if we want more commands, it's really easy to build another executable and copy it in.
 
