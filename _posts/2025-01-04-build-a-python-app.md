@@ -122,7 +122,7 @@ try:
     MyAwesomeApp.main()
     sys.exit(0)
 except:
-    trackback.print_exc()
+    traceback.print_exc()
     sys.exit(-1)
 ```
 
