@@ -10,7 +10,7 @@ keywords:
 - api design
 ---
 
-I found myself providing design feedback to a project recently, and decided that the discussion was worth expanding beyond me ranting over a video call. 
+I found myself providing design feedback to a project recently, and decided that the discussion was worth expanding beyond me ranting over a video call.
 
 This project is a multi-service framework. Not an uncommon project, particularly in areas where there are many providers of *almost* equivalent services, and a lot of competition. Using a framework that supports many of them lets you - the developer - build your application once and then conveniently switch provider without a full rewrite.
 
@@ -44,7 +44,7 @@ In terms of design, that implies that every `...StorageClient` class must have i
 
 To round out this simple example and illustrate the first type of issue you may hit, here are partial implementations of those two providers.
 
-```
+```python
 class Provider1StorageClient:
     def list_files(self, pattern):
         from provider1 import get_file_list
@@ -102,7 +102,7 @@ Okay, these have been easy so far, let's discuss some questions that might start
 
 Inevitably, there will be times that we simply can't handle what the user has asked for. Maybe we (or a provider) can't support multiple `*` characters in the filter, or a certain provider has a limit on filename length. In other words, something that looks like a `ValueError` (the type of parameter is correct, but the value can't be used), as opposed to a `TypeError` (the code must be incorrect because variables are obviously getting mixed up).
 
-The short answers are consistently, and where the caller expects errors.
+The short answers are: "consistently" and "where the caller expects errors".
 
 Error cases are going to require the user to write exception handling below the configuration line - that means it can't be provider-specific. A service that is permanently missing a feature is a great reason for them to never configure that provider again, but that's an above-the-line decision, not something to make users consider every single time they want to use a function.
 
@@ -114,7 +114,7 @@ However, as soon as they _call_ it, that's where errors might occur. For a varie
 
 Now, some will suggest that the absence of the method entirely is a clearer indicator of a coding error - if your program _needs_ `list_files`, then you should find out as soon as possible if it's missing - and I agree that it is a clearer indicator, but disagree on it being the user's coding error. In part because it was *our* job to help the user avoid such an error, but mostly because it leads to ugly code.
 
-It's very unlikely that users be able to know ahead of time that the attribute will be missing. No matter how many type annotations you use, you won't be able to statically infer types throughout a complex application to know exactly which provider you'll be using at any point. The point of our framework is to let our users _avoid_ having to know which provider they're using! And since you can't do it statically, you will force your users into this code pattern:
+It's very unlikely that users will be able to know ahead of time that the attribute will be missing. No matter how many type annotations you use, you won't be able to statically infer types throughout a complex application to know exactly which provider you'll be using at any point. The point of our framework is to let our users _avoid_ having to know which provider they're using! And since you can't do it statically, you will force your users into this code pattern:
 
 ```python
 try:
@@ -139,15 +139,15 @@ except Exception:
     # handle all other errors
 ```
 
-Your users will appreciate not having to guess where errors might occur. The more you can bundle them together to always occurs as the result of an explicit function call, the better.
+Your users will appreciate not having to guess where errors might occur. The more you can bundle them together to always occur as the result of an explicit function call, the better.
 
 ## Can our users work around us?
 
-What happens when one of our users needs something that we don't offer? Before you try too hard to apply this question to filename filtering, there answer there is pretty simple - they can pass an empty filter and do the filtering themselves.
+What happens when one of our users needs something that we don't offer? Before you try too hard to apply this question to filename filtering, the answer there is pretty simple - they can pass an empty filter and do the filtering themselves.
 
 This idea speaks to the need to provide *building blocks* and *passthroughs* as well as the main helpful API we hope our users will focus on.
 
-A building block is a lower-level versions of functionality, still abstracted across the different providers, but implemented in a way that puts more work onto our user. For example, our `list_files()` may return a single list, but some services might support paging (chunked results). So we add `list_files_by_page()` that returns an iterable of lists of filtered files. Services without paging support can implement this by using their `list_files()` result and returning it on its own (one single page), while services with paging may implement the paged one directly and make their `list_files()` be based on it. Or a single function that sends and receives "raw", unprocessed responses (for example, `dict`s parsed to/from JSON, rather than rich objects).
+A building block is a lower-level version of functionality, still abstracted across the different providers, but implemented in a way that puts more work onto our user. For example, our `list_files()` may return a single list, but some services might support paging (chunked results). So we add `list_files_by_page()` that returns an iterable of lists of filtered files. Services without paging support can implement this by using their `list_files()` result and returning it on its own (one single page), while services with paging may implement the paged one directly and make their `list_files()` be based on it. Or a single function that sends and receives "raw", unprocessed responses (for example, `dict`s parsed to/from JSON, rather than rich objects).
 
 It's very likely that this is how you're developing the implementation anyway, but by making it a carefully designed part of your public API, you let your users choose which approach they want. Users who desperately need paging have the choice to build their code around that API, and if they later switch to a provider that doesn't support it, your implementation can cover the difference and their code doesn't have to change. (Someone sending raw requests will likely get errors direct from the provider and *will* have to change, but only in the places where they used it.)
 
